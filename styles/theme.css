@@ -1,0 +1,15 @@
+
+
+div.box img{
+    width: 50%;
+    height: 50%;
+}
+
+div.box {
+    width: 500px;
+    height: auto;
+    padding: 10px 10px;
+    margin: 20px;
+    flex-grow: 1;
+    font-size:20px;
+}
