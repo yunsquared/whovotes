@@ -1,15 +1,204 @@
-
-
-div.box img{
-    width: 50%;
-    height: 50%;
+header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0px;
 }
 
-div.box {
-    width: 500px;
-    height: auto;
-    padding: 10px 10px;
-    margin: 20px;
-    flex-grow: 1;
-    font-size:20px;
+footer{
+	background: #271E84;
+
+}
+
+body {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+h1{
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 44px;
+	color: #271E84;
+}
+
+p {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 25px;
+}
+
+h6 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #271E84;
+}
+
+.nav ul li a:hover{
+	background-color: #271E84;
+	border-radius: 10px;
+	color: white;
+	padding: 15px;
+	transition-timing-function: ease;
+	transition-duration: 0.3s;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 20%;
+  padding: 0 4px;
+  width: 176px;
+  text-align: center;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+.team h1{
+	padding-left: 53px;
+}
+
+.team p{
+	font-weight: 300;
+	font-size: 14px;
+}
+
+.intro-text {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 25px;
+	width: 257px;
+}
+
+@font-face {
+    font-family: "Noto Sans Regular";
+    src: url(fonts/NotoSans-Regular.ttf) format("truetype");
+}
+
+.nav{
+	display: flex;
+	height: 148px;
+	align-items: center;
+	justify-content: space-between;
+	float: right;
+	padding-right: 20px;
+}
+
+.nav ul{
+	display: flex;
+	height: 148px;
+}
+
+.nav ul li {
+	list-syle: none;
+	padding: 53px;
+	list-style-type: none;
+}
+
+.logo-col{
+	background: #E8E6F1;
+}
+
+.logo {
+	float: left;
+	padding-left: 53px;
+	padding-top: 26px;
+}
+
+.nav ul li a {
+	text-transform: uppercase;
+	color: black;
+	font-weight: 500;
+	font-size: 17px;
+	text-decoration: none;
+}
+
+.hero-image{
+	/*background: url(images/placeholder.png);
+	background-repeat: no-repeat;*/
+	background-position: right;
+	/*background-size: contain;*/
+	height: 600px;
+	padding-left: 80px;
+	padding-right: 0px;
+	float: right;
+	padding-top: 168px;
+}
+
+.hero-content{
+	background: #E8E6F1;
+	width: 877px;
+	padding-left: 53px;
+	padding-right: 56px;
+	padding-top: 26px;
+	padding-bottom: 72px;
+	margin-bottom: 0px;
+}
+
+.mission{
+	width: 733px;
+	float: left;
+	padding-left: 53px;
+}
+
+.glossary{
+	padding-left: 53px;
+}
+
+.goal{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#selected{
+	background-color: #271E84;
+	border-radius: 10px;
+	color: white;
+	padding: 15px;
+}
+
+#pink{
+	color: #A24094;
+}
+
+#goal{
+	background: #A24094;
+	margin: none;
+	color: #E8E6F1;
+	padding-left: 53px;
+	padding-right: 165px;
+	padding-top: 47px;
+	padding-bottom: 100px;
+	width:540px;
+}
+
+#goal-parallel{
+	background: #E8E6F1;
+	display: flex;
+	margin: none;
+	padding-right:58px;
+	padding-left: 57px;
+	padding-top: 46px;
+	padding-bottom: 45px;
+	margin-bottom:;
+}
+
+#contact{
+	color: white;
+	padding-left:53px;
+	padding-top: 50px;
+}
+
+footer p{
+	color: white;
+	padding-left:53px;
+	font-size:18px;
+	padding-bottom: 68px;
 }
