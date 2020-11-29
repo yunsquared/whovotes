@@ -125,7 +125,7 @@ h6 {
 	background-position: right;
 	/*background-size: contain;*/
 	height: 600px;
-	padding-left: 80px;
+	padding-left: 70px;
 	padding-right: 0px;
 	float: right;
 	padding-top: 168px;
@@ -139,6 +139,17 @@ h6 {
 	padding-top: 26px;
 	padding-bottom: 72px;
 	margin-bottom: 0px;
+}
+
+.outline {
+	stroke: black;
+	stroke-width: 1px;
+	fill: none;
+}
+
+.graticule {
+	fill: none;
+	stroke: white;
 }
 
 .mission{
