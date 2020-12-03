@@ -152,10 +152,22 @@ h6 {
 	stroke: white;
 }
 
-.mission{
+/* .mission{
 	width: 733px;
 	float: left;
 	padding-left: 53px;
+} */
+
+.mission{
+	width: 50%;
+	display: float;
+	padding-left: 50px;
+}
+
+.about-us{
+	width: 50%;
+	display: float;
+	padding-left: 50px;
 }
 
 .glossary{
