@@ -147,6 +147,10 @@ h6 {
 	fill: none;
 }
 
+.county {
+	stroke: black;
+	stroke-width: 1px;
+}
 .graticule {
 	fill: none;
 	stroke: white;
