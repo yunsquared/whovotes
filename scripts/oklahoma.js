@@ -200,10 +200,10 @@ const loadData = async function() {
          .text(nameByID[d.id]);
 
        map.select("#legend_top")
-          .text("Broaband Penetration: " + broadbandByID[d.id] + "%");
+          .text("Broadband Penetration: " + broadbandByID[d.id] + "%");
 
        map.select("#legend_bot")
-          .text("Votor Turnout: " + turnoutByID[d.id] + "%");
+          .text("Voter Turnout: " + turnoutByID[d.id] + "%");
       
       map.selectAll(".county")
          .attr("opacity", 0.6);
