@@ -48,6 +48,33 @@
     </header>
 
     <div class="glossary">
+      <h1>The Data</h1>
+      <p>
+        Data for this project was obtained from a variety of sources. Presidential election data was obtained from the <a href='https://doi.org/10.7910/DVN/VOQCHQ'>MIT Election Lab</a>, 
+        <a href='https://github.com/microsoft/USBroadbandUsagePercentages'>Broadband usage data</a> was sourced from the Microsoft Airband project, and US census data was used to calculate voter 
+        turnout percentages and for geographic information. We chose to use Microsoft's estimates for broaband usage per county due to the well documented
+        innacuracies in the FCC census data on broadband penetration. At the time of this project, all available FCC data had a major flaw in methodology.
+        When gathering broadband penetration info, the FCC counted a census block as having broadband access if any household in that block reported broadband access.
+        This does not reflect the reality of many municipalities and rural areas and it also doesn't have standards as strict as Microsoft's in terms of internet speeds.
+      </p>
+      <p>
+        Despite careful selection of data sources, there were still several issues that we had to work around. The first was a lack of election data for the state of Alaska in our dataset.
+        This occured due to the designation of Alaska's administrative units working slightly differently than the county system of most states. This problem could be corrected by hand using manually obtained
+        election data, but this was outside of our timeline. The next issue was a lack of standardization of sources. Voter counts per major candidate had to be transformed into total votor turnout percentages using
+        US Census data. This does not account for third party candidates, nor does it account for population members who are of voting age but not qualified to vote (inmates particularly). We determined that this 
+        was fine for the scope of our project falling under exploratory data analysis.
+      </p>
+      <p>
+        The mapping system we chose is also fundamentally flawed due to the constraints of multiple variables. We chose to represent data as a bivariate choropleth, which has a number of shortcomings. The primary
+        challenge with these visualizations is that for their information to be discernable and accessible, there has to be a significant loss in the resolution of data displayed. The data shown was placed into
+        quantile bins, effectively making comparisons between bins impossible from a visual point of view. This type of graph merely shows the worst case scenarios (low votor turnout and low broadband penetration)
+        compared to the best case scenarios. A linear mapping color scale was initially used, but the resulting image had major accessibility issues and poor discernability between different counties. If this
+        topic was to be explored in greater depth, we would recommend that investigators consider using another visualization method entirely due to the huge range of values in the data (and the lack of a strong
+        correllation in some areas between the two variables).
+      </p>
+    </div>
+
+    <div class="glossary">
       <h1>Glossary</h1>
       <p>
         filler text until we finalize this section! 
