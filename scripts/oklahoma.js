@@ -1,4 +1,4 @@
-const svg = d3.select("#choropleth");
+const svg = d3.select("#oklahoma");
 const width = svg.attr("width");
 const height = svg.attr("height");
 const margin = { top: 20, right: 20, bottom: 20, left:20};
@@ -16,7 +16,14 @@ const loadData = async function() {
     //MIT Election Data and Science Lab, 2018, "County Presidential Election Returns 2000-2016", https://doi.org/10.7910/DVN/VOQCHQ, Harvard Dataverse, V6, UNF:6:ZZe1xuZ5H2l4NUiSRcRf8Q== [fileUNF] 
     var voterTurnout = await d3.csv("./data/voterturnout.csv");
     var counties = topojson.feature(usa, usa.objects.counties);
-    var states = topojson.feature(usa, usa.objects.states);
+    //Credit to Mike Bostok for this filtering solution. I was having trouble selecting a single state from our dataset! https://bl.ocks.org/mbostock/19ffece0a45434b0eef3cc4f973d1e3d
+    var states = topojson.feature(usa, {
+        type: "GeometryCollection",
+        geometries: usa.objects.states.geometries.filter(function(d) {
+          return d.id == 40 // AK
+        })
+      });
+    
     var statesMesh = topojson.mesh(usa, usa.objects.states);
     var countiesMesh = topojson.mesh(usa, usa.objects.counties);
     projectionUSA = d3.geoAlbersUsa().fitSize([mapWidth, mapHeight], states);
@@ -67,18 +74,18 @@ const loadData = async function() {
         return colors[yScale(y) + xScale(x) * 3];
     }
 
-    map.selectAll("path.counties").data(counties.features)
+    map.selectAll("path.counties").data(counties.features.filter(function (d){if(d.id >= 40000 && d.id <=41000) return d.id;}))
         .join("path")
         .attr("class", "county")
         .attr("note", d => d.id)
         .attr("d", path)
         .style("fill", d => getColor(d.id))
         .on('mouseover', mouseover)
-        .on('mouseout', mouseout);    
+        .on('mouseout', mouseout);   
       
 
     map.append('rect')
-        .attr('x', 825)
+        .attr('x', 125)
         .attr('y', 380)
         .attr('width', 25)
         .attr('height', 25)
@@ -86,7 +93,7 @@ const loadData = async function() {
         .attr('fill', '#e8e8e8');
               
     map.append('rect')
-        .attr('x', 850)
+        .attr('x', 150)
         .attr('y', 380)
         .attr('width', 25)
         .attr('height', 25)
@@ -94,7 +101,7 @@ const loadData = async function() {
         .attr('fill', '#ace4e4');
                           
     map.append('rect')
-        .attr('x', 875)
+        .attr('x', 175)
         .attr('y', 380)
         .attr('width', 25)
         .attr('height', 25)
@@ -102,7 +109,7 @@ const loadData = async function() {
         .attr('fill', '#5ac8c8');
               
     map.append('rect')
-        .attr('x', 825)
+        .attr('x', 125)
         .attr('y', 405)
         .attr('width', 25)
         .attr('height', 25)
@@ -110,7 +117,7 @@ const loadData = async function() {
         .attr('fill', '#dfb0d6');
               
     map.append('rect')
-        .attr('x', 850)
+        .attr('x', 150)
         .attr('y', 405)
         .attr('width', 25)
         .attr('height', 25)
@@ -118,7 +125,7 @@ const loadData = async function() {
         .attr('fill', '#a5add3');
               
     map.append('rect')
-        .attr('x', 875)
+        .attr('x', 175)
         .attr('y', 405)
         .attr('width', 25)
         .attr('height', 25)
@@ -126,7 +133,7 @@ const loadData = async function() {
         .attr('fill', '#5698b9');
               
     map.append('rect')
-        .attr('x', 825)
+        .attr('x', 125)
         .attr('y', 430)
         .attr('width', 25)
         .attr('height', 25)
@@ -134,7 +141,7 @@ const loadData = async function() {
         .attr('fill', '#be64ac');
                              
     map.append('rect')
-        .attr('x', 850)
+        .attr('x', 150)
         .attr('y', 430)
         .attr('width', 25)
         .attr('height', 25)
@@ -142,7 +149,7 @@ const loadData = async function() {
         .attr('fill', '#8c62aa');
               
     map.append('rect')
-        .attr('x', 875)
+        .attr('x', 175)
         .attr('y', 430)
         .attr('width', 25)
         .attr('height', 25)
@@ -151,17 +158,14 @@ const loadData = async function() {
     
     //Legend text
     map.append('text')
-        .attr("transform", "translate(825,373)")
+        .attr("transform", "translate(125,373)")
         .text("Lower Voter Turnout >")
         .style("font-size", "9px"); 
 
-    map.append('text')
-         .attr("transform", "translate(825,373)")
-         .text("Lower Voter Turnout >")
-         .style("font-size", "9px");
+
 
     map.append('text')
-         .attr("transform", "translate(818,460) rotate (270)")
+         .attr("transform", "translate(118,460) rotate (270)")
          .text("< Lower Broadband")
          .style("text-anchor", "start")
          .style("font-size", "10px");
@@ -170,14 +174,14 @@ const loadData = async function() {
 
     map.append("text")
        .text("")
-       .attr("x", 525)
+       .attr("x", 125)
        .attr("y", 500)
        .attr("id", "legend_name")
        .style("font-size", "10pt");
 
     map.append("text")
          .text("")
-         .attr("x", 525)
+         .attr("x", 125)
          .attr("y", 525)
          .attr("id", "legend_top")
          .style("font-size", "10pt");
@@ -185,7 +189,7 @@ const loadData = async function() {
 
     map.append("text")
          .text("")
-         .attr("x", 525)
+         .attr("x", 125)
          .attr("y", 550)
          .attr("id", "legend_bot")
          .style("font-size", "10pt");
