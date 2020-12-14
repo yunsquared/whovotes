@@ -58,8 +58,8 @@ const loadData = async function() {
         "#dfb0d6", "#a5add3", "#5698b9", 
         "#be64ac", "#8c62aa", "#3b4994"
     ]
-    const xScale = d3.scaleQuantile(xArray, [2, 1, 0])
-    const yScale = d3.scaleQuantile(yArray, [2, 1 ,0])
+    const xScale = d3.scaleQuantile(xArray, [0, 1, 2])
+    const yScale = d3.scaleQuantile(yArray, [0, 1, 2])
             
     function getColor(id) {
         x = broadbandByID[id]
@@ -151,19 +151,15 @@ const loadData = async function() {
     
     //Legend text
     map.append('text')
-        .attr("transform", "translate(825,373)")
-        .text("Lower Voter Turnout >")
-        .style("font-size", "9px"); 
-
-    map.append('text')
          .attr("transform", "translate(825,373)")
-         .text("Lower Voter Turnout >")
-         .style("font-size", "9px");
+         .text("Greater Voter Turnout >")
+         .style("font-size", "10px");
 
     map.append('text')
-         .attr("transform", "translate(818,460) rotate (270)")
-         .text("< Lower Broadband")
+         .attr("transform", "translate(818,500) rotate (270)")
+         .text("< Greater Broadband Use")
          .style("text-anchor", "start")
+         .style("text-align", "right")
          .style("font-size", "10px");
 
     //Mouseover text
