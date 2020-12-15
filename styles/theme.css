@@ -166,6 +166,17 @@ h6 {
 	width: 65%;
 	display: float;
 	padding-left: 50px;
+	padding-right: 70px;
+}
+
+.breakdowns{
+	width: 94%;
+	display: float;
+	padding-left: 50px;
+	padding-right: 70px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #E8E6F1;
 }
 
 .glossary{
@@ -176,6 +187,58 @@ h6 {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.states{
+	background-color: white;
+	padding-left: 50px;
+}
+
+.collapsible {
+  background-color: #271E84;
+	border-radius: 10px;
+	color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #A24094;
+	transition-timing-function: ease;
+	transition-duration: 0.3s;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  border-radius: 10px;
+  display: none;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+button {
+	background-color: #271E84;
+	border-radius: 10px;
+	color: white;
+	padding: 15px;
+	border: none;
+	font-family: 'Noto Sans', sans-serif;
+	width: 300px;
+	font-weight: bold;
+}
+
+button:hover{
+	background-color: #A24094;
+	transition-timing-function: ease;
+	transition-duration: 0.3s;
 }
 
 #selected{
