@@ -176,13 +176,18 @@ h6 {
 	padding-right: 70px;
 }
 
+.slideshow {
+	padding-left: 50px;
+	padding-right: 40px;
+}
+
 .breakdowns{
 	width: 94%;
 	display: float;
 	padding-left: 50px;
 	padding-right: 70px;
 	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 60px;
 	background-color: #E8E6F1;
 }
 
@@ -238,14 +243,16 @@ button {
 	padding: 15px;
 	border: none;
 	font-family: 'Noto Sans', sans-serif;
+	font-size: 20px;
 	width: 300px;
 	font-weight: bold;
 }
 
 button:hover{
 	background-color: #A24094;
+	color: white;
 	transition-timing-function: ease;
-	transition-duration: 0.3s;
+	transition-duration: 0.2s;
 }
 
 #selected{
