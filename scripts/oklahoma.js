@@ -1,4 +1,4 @@
-var oklahomaWrapper = function () {
+function oklahomaWrapper() {
     const svg = d3.select("#oklahoma");
     const width = svg.attr("width");
     const height = svg.attr("height");

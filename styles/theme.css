@@ -156,6 +156,13 @@ h6 {
 	stroke: white;
 }
 
+.slideshowImageHolder {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
 /* .mission{
 	width: 733px;
 	float: left;

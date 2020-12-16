@@ -1,4 +1,4 @@
-var wvWrapper = function () {
+function wvWrapper() {
     const svg = d3.select("#west_virginia");
     const width = svg.attr("width");
     const height = svg.attr("height");

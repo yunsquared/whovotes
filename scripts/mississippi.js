@@ -1,4 +1,4 @@
-var mississippiWrapper = function () {
+function mississippiWrapper() {
     const svg = d3.select("#mississippi");
     const width = svg.attr("width");
     const height = svg.attr("height");
